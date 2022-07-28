@@ -27,17 +27,25 @@
             let playing = true
             let frame = 0
             setInterval(function() {
-                frame += 1
-                if (frame === 9) { frame = 0 }
+                if (!document.getElementById("audio").paused) { 
+                    frame += 1
+                    if (frame === 9) { frame = 0 }
+                } 
+                else { frame = 0 }
                 document.getElementById("omori").src = `/images/frame${frame}.png`
             }, 30)
         </script>
     </head>
     <body>
         <div class="center">
-            <img id="omori" src="/images/frame0.png">
+            <img id="omori" src="images/frame0.png">
             <br><br>
-            <span>deus me ajuda</span>
+            <audio id="audio" controls="true" autoplay="false" loop="true">
+                <source src="audio/palmtreepanicpmix.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio>
+            <br><br>
+            <span>bem-vindo a minha página!</span>
         </div>
     </body>
 </html>
