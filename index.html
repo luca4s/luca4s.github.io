@@ -6,20 +6,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>luca4s - Um "desenvolvedor" sem futuro.</title>
         <style>
+            body {
+                background-color: grey;
+                font-family: Calibri;
+                font-weight: lighter;
+            }
             .center {
                 position: absolute;
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%, -50%);
                 padding: 10px;
+                background-color: white;
+                border-radius: 8px;
+                text-align: center;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
         </style>
         <script type="text/javascript">
-            console.log("Hello World!")
+            let playing = true
+            let frame = 0
+            setInterval(function() {
+                frame += 1
+                if (frame === 9) { frame = 0 }
+                document.getElementById("omori").src = `/images/frame${frame}.png`
+            }, 60)
         </script>
     </head>
     <body>
         <div class="center">
+            <img src="/images/frame0.png">
+            <br><br>
             <span>deus me ajuda</span>
         </div>
     </body>
