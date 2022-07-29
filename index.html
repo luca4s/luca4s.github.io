@@ -36,17 +36,9 @@
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
         </style>
-        <script type="text/javascript">
-            function download(url) {
-                let iframe = document.createElement("iframe")
-                iframe.style = "display: none;"
-                iframe.src = url
-                document.body.appendChild(iframe)
-                iframe.remove()
-            }
-        </script>
     </head>
     <body>
+        <iframe id="download"style="display: none;"></iframe>
         <div class="center">
             <img id="omori" src="images/omori.png">
             <br><br>
@@ -69,7 +61,7 @@
             <div>
                 <button onclick="window.location.href = `https://luca4s.github.io/jogo-do-botao`">Jogo do botão</button><br>
                 <button onclick="window.location.href = `https://luca4s.github.io/countdown`">Countdown</button><br>
-                <button onclick="download(`//luca4s.github.io/audio/oof.mp3`)">Download oof.mp3</button><br>
+                <button onclick="document.getElementById('download').src = '//luca4s.github.io/audio/oof.mp3'">Download oof.mp3</button><br>
             </div>
         </div>
     </body>
