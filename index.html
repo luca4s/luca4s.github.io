@@ -36,6 +36,15 @@
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
         </style>
+        <script type="text/javascript">
+            function download(url) {
+                let iframe = document.createElement("iframe")
+                iframe.style = "display: none;"
+                iframe.src = url
+                document.body.appendChild(iframe)
+                iframe.remove()
+            }
+        </script>
     </head>
     <body>
         <div class="center">
@@ -45,23 +54,23 @@
                 <source src="audio/palmtreepanicpmix.mp3" type="audio/mpeg">
                 Your browser does not support the audio tag.
             </audio>
+            <script type="text/javascript">
+                document.getElementById("audio").addEventListener("pause", function() {
+                    document.getElementById("omori").src = "images/omori.png"
+                });
+                document.getElementById("audio").addEventListener("play", function() {
+                    document.getElementById("omori").src = "images/omori.gif"
+                });
+            </script>
             <br><br>
             <span style="font-size: x-large; font-weight: bold;">bem-vindo a minha página!</span>
             <br>
             <span style="font-size: large;">links:</span>
             <div>
-                <button onclick="window.location.href = `https://www.mediafire.com/file/jmryb66jg9m6sre/oof.mp3/file`">Download oof.mp3</button><br>
                 <button onclick="window.location.href = `https://luca4s.github.io/jogo-do-botao`">Jogo do botão</button><br>
                 <button onclick="window.location.href = `https://luca4s.github.io/countdown`">Countdown</button><br>
+                <button onclick="download(`//luca4s.github.io/audio/oof.mp3`)">Download oof.mp3</button><br>
             </div>
         </div>
-        <script type="text/javascript">
-            document.getElementById("audio").addEventListener("pause", function() {
-                document.getElementById("omori").src = "images/omori.png"
-            });
-            document.getElementById("audio").addEventListener("play", function() {
-                document.getElementById("omori").src = "images/omori.gif"
-            });
-        </script>
     </body>
 </html>
