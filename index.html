@@ -7,7 +7,16 @@
         <title>luca4s - Um "desenvolvedor" sem futuro.</title>
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito"/>
         <link rel="icon" href="images/favicon.ico">
-        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript">
+            function download(file, name) {
+                const a = document.createElement("a");
+                a.href = file;
+                a.download = name;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }
+        </script>
         <style>
             body {
                 background-color: rgb(37, 37, 38);
@@ -61,13 +70,7 @@
             <div>
                 <button onclick="window.location.href = `https://luca4s.github.io/jogo-do-botao`">Jogo do botão</button><br>
                 <button onclick="window.location.href = `https://luca4s.github.io/countdown`">Countdown</button><br>
-                <button id="oof">Download oof.mp3</button><br>
-                <script>
-                    $("#oof").click(function (e) {
-                        e.preventDefault();
-                        window.location.href = "audio/oof.mp3"
-                    });
-                </script>
+                <button onclick="download(`audio/oof.mp3`, `oof`)">Download oof.mp3</button><br>
             </div>
         </div>
     </body>
