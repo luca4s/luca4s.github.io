@@ -7,6 +7,7 @@
         <title>luca4s - Um "desenvolvedor" sem futuro.</title>
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito"/>
         <link rel="icon" href="images/favicon.ico">
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
         <style>
             body {
                 background-color: rgb(37, 37, 38);
@@ -38,7 +39,6 @@
         </style>
     </head>
     <body>
-        <iframe id="download"style="display: none;"></iframe>
         <div class="center">
             <img id="omori" src="images/omori.png">
             <br><br>
@@ -48,10 +48,10 @@
             </audio>
             <script type="text/javascript">
                 document.getElementById("audio").addEventListener("pause", function() {
-                    document.getElementById("omori").src = "images/omori.png"
+                    document.getElementById("omori").src = "images/omori.png";
                 });
                 document.getElementById("audio").addEventListener("play", function() {
-                    document.getElementById("omori").src = "images/omori.gif"
+                    document.getElementById("omori").src = "images/omori.gif";
                 });
             </script>
             <br><br>
@@ -61,7 +61,13 @@
             <div>
                 <button onclick="window.location.href = `https://luca4s.github.io/jogo-do-botao`">Jogo do botão</button><br>
                 <button onclick="window.location.href = `https://luca4s.github.io/countdown`">Countdown</button><br>
-                <button href="/audio/oof.mp3">Download oof.mp3</button><br>
+                <button id="oof">Download oof.mp3</button><br>
+                <script>
+                    $("#oof").onclick(function (e) {
+                        e.preventDefault();
+                        window.location.href = "audio/oof.mp3"
+                    });
+                </script>
             </div>
         </div>
     </body>
